@@ -99,14 +99,22 @@ namespace WindowsFormsApplication3
         private void BUTbet_Click(object sender, EventArgs e)
         {
             bet = (int)NUDbet.Value;
-            Console.WriteLine();
+            LBLtitle.Visible = false;
             screen = 2;
             state();
         }
 
         private void BUTstart_Click(object sender, EventArgs e)
         {
+            
             screen = 1;
+            state();
+        }
+
+        private void BUTbet_Click_1(object sender, EventArgs e)
+        {
+            bet = (int)NUDbet.Value;
+            screen = 2;
             state();
         }
     }
