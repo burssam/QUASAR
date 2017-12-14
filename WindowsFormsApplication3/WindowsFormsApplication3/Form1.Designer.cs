@@ -42,6 +42,12 @@ namespace WindowsFormsApplication3
             this.TBsum = new System.Windows.Forms.TextBox();
             this.TB18 = new System.Windows.Forms.TextBox();
             this.TB47 = new System.Windows.Forms.TextBox();
+            this.TBsingle = new System.Windows.Forms.TextBox();
+            this.TBmulti = new System.Windows.Forms.TextBox();
+            this.LBLsingle = new System.Windows.Forms.Label();
+            this.LBLmulti = new System.Windows.Forms.Label();
+            this.BUTnumplay = new System.Windows.Forms.Button();
+            this.LBLstupid = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.NUDbet)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,7 +88,7 @@ namespace WindowsFormsApplication3
             // BUTbet
             // 
             this.BUTbet.BackColor = System.Drawing.Color.Lime;
-            this.BUTbet.Location = new System.Drawing.Point(283, 264);
+            this.BUTbet.Location = new System.Drawing.Point(263, 264);
             this.BUTbet.Name = "BUTbet";
             this.BUTbet.Size = new System.Drawing.Size(140, 23);
             this.BUTbet.TabIndex = 3;
@@ -122,7 +128,12 @@ namespace WindowsFormsApplication3
             // 
             // NUDbet
             // 
-            this.NUDbet.Location = new System.Drawing.Point(294, 224);
+            this.NUDbet.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.NUDbet.Location = new System.Drawing.Point(274, 227);
             this.NUDbet.Maximum = new decimal(new int[] {
             500,
             0,
@@ -163,6 +174,61 @@ namespace WindowsFormsApplication3
             this.TB47.Size = new System.Drawing.Size(100, 20);
             this.TB47.TabIndex = 10;
             // 
+            // TBsingle
+            // 
+            this.TBsingle.Location = new System.Drawing.Point(28, 129);
+            this.TBsingle.Multiline = true;
+            this.TBsingle.Name = "TBsingle";
+            this.TBsingle.Size = new System.Drawing.Size(188, 92);
+            this.TBsingle.TabIndex = 11;
+            this.TBsingle.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // TBmulti
+            // 
+            this.TBmulti.Location = new System.Drawing.Point(474, 129);
+            this.TBmulti.Multiline = true;
+            this.TBmulti.Name = "TBmulti";
+            this.TBmulti.Size = new System.Drawing.Size(188, 92);
+            this.TBmulti.TabIndex = 12;
+            this.TBmulti.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // LBLsingle
+            // 
+            this.LBLsingle.AutoSize = true;
+            this.LBLsingle.Location = new System.Drawing.Point(45, 229);
+            this.LBLsingle.Name = "LBLsingle";
+            this.LBLsingle.Size = new System.Drawing.Size(160, 13);
+            this.LBLsingle.TabIndex = 13;
+            this.LBLsingle.Text = "Enter your name for single player";
+            // 
+            // LBLmulti
+            // 
+            this.LBLmulti.AutoSize = true;
+            this.LBLmulti.Location = new System.Drawing.Point(442, 224);
+            this.LBLmulti.Name = "LBLmulti";
+            this.LBLmulti.Size = new System.Drawing.Size(234, 26);
+            this.LBLmulti.TabIndex = 14;
+            this.LBLmulti.Text = "Enter all players\' names, each on a different line,\r\n for multiple players";
+            // 
+            // BUTnumplay
+            // 
+            this.BUTnumplay.Location = new System.Drawing.Point(233, 293);
+            this.BUTnumplay.Name = "BUTnumplay";
+            this.BUTnumplay.Size = new System.Drawing.Size(222, 53);
+            this.BUTnumplay.TabIndex = 15;
+            this.BUTnumplay.Text = "Proceed to bet making!";
+            this.BUTnumplay.UseVisualStyleBackColor = true;
+            this.BUTnumplay.Click += new System.EventHandler(this.BUTnumplay_Click);
+            // 
+            // LBLstupid
+            // 
+            this.LBLstupid.AutoSize = true;
+            this.LBLstupid.Location = new System.Drawing.Point(206, 208);
+            this.LBLstupid.Name = "LBLstupid";
+            this.LBLstupid.Size = new System.Drawing.Size(276, 13);
+            this.LBLstupid.TabIndex = 16;
+            this.LBLstupid.Text = "You MUST enter a name or names into one of the boxes!";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -170,6 +236,12 @@ namespace WindowsFormsApplication3
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(701, 409);
+            this.Controls.Add(this.LBLstupid);
+            this.Controls.Add(this.BUTnumplay);
+            this.Controls.Add(this.LBLmulti);
+            this.Controls.Add(this.LBLsingle);
+            this.Controls.Add(this.TBmulti);
+            this.Controls.Add(this.TBsingle);
             this.Controls.Add(this.TB47);
             this.Controls.Add(this.TB18);
             this.Controls.Add(this.TBsum);
@@ -208,6 +280,12 @@ namespace WindowsFormsApplication3
         private System.Windows.Forms.TextBox TBsum;
         private System.Windows.Forms.TextBox TB18;
         private System.Windows.Forms.TextBox TB47;
+        private System.Windows.Forms.TextBox TBsingle;
+        private System.Windows.Forms.TextBox TBmulti;
+        private System.Windows.Forms.Label LBLsingle;
+        private System.Windows.Forms.Label LBLmulti;
+        private System.Windows.Forms.Button BUTnumplay;
+        private System.Windows.Forms.Label LBLstupid;
     }
 }
 

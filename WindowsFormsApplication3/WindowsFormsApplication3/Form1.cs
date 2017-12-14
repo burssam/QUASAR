@@ -15,12 +15,14 @@ namespace WindowsFormsApplication3
         public int sum = 0;
         int bet = 0;
         int screen = 0;
+        int numPlayers = 1;
         public Form1()
         {
            InitializeComponent();
             state();
             LBLtitle.Visible = true;
             BUTstay.Visible = false;
+            LBLstupid.Visible = false;
 
 
         }
@@ -32,17 +34,22 @@ namespace WindowsFormsApplication3
                 //screen0
                 LBLinst.Visible = true;
                 BUTstart.Visible = true;
-      
                 //screen1
+                LBLmulti.Visible = false;
+                LBLsingle.Visible = false;
+                TBsingle.Visible = false;
+                TBmulti.Visible = false;
+                BUTnumplay.Visible = false;
+                //screen2
                 NUDbet.Visible = false;
                 BUTbet.Visible = false;
-                //screen2
+                //screen3
                 BUT18.Visible = false;
                 BUT47.Visible = false;
                 TBsum.Visible = false;
                 TB18.Visible = false;
                 TB47.Visible = false;
-                //screen3
+               
             }
             else if (screen == 1)
             {
@@ -50,17 +57,45 @@ namespace WindowsFormsApplication3
                 LBLinst.Visible = false;
                 BUTstart.Visible = false;
                 //screen1
-                NUDbet.Visible = true;
-                BUTbet.Visible = true;
+                LBLmulti.Visible = true;
+                LBLsingle.Visible = true;
+                TBsingle.Visible = true;
+                TBmulti.Visible = true;
+                BUTnumplay.Visible = true;
                 //screen2
+                NUDbet.Visible = false;
+                BUTbet.Visible = false;
+                //screen3
                 BUT18.Visible = false;
                 BUT47.Visible = false;
                 TBsum.Visible = false;
                 TB18.Visible = false;
                 TB47.Visible = false;
-                //screen3
+
             }
             else if (screen ==2 )
+            {
+                //screen0
+                LBLinst.Visible = false;
+                BUTstart.Visible = false;
+                //screen1
+                LBLmulti.Visible = false;
+                LBLsingle.Visible = false;
+                TBsingle.Visible = false;
+                TBmulti.Visible = false;
+                BUTnumplay.Visible = false;
+                //screen2
+                NUDbet.Visible = true;
+                BUTbet.Visible = true;
+                //screen3
+                BUT18.Visible = false;
+                BUT47.Visible = false;
+                TBsum.Visible = false;
+                TB18.Visible = false;
+                TB47.Visible = false;
+
+            }
+            else if (screen == 3)
             {
 
                 //screen0
@@ -116,6 +151,40 @@ namespace WindowsFormsApplication3
             bet = (int)NUDbet.Value;
             screen = 2;
             state();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BUTnumplay_Click(object sender, EventArgs e)
+        {
+            if (TBsingle.Text!="")
+            {
+                player((string)TBsingle.Text);
+                screen = 2;
+                state();
+            } 
+            else if (TBmulti.Text!="")
+            {
+                for (int i = 0; i < TBmulti.Lines.Length; i++)
+                {
+                    player(TBmulti.Lines[i]);
+                }
+                numPlayers = TBmulti.Lines.Length;
+                screen = 2;
+                state();
+            }
+            else
+            {
+                LBLstupid.Visible = true;
+            }
         }
     }
 }
