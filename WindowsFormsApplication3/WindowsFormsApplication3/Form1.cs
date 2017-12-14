@@ -99,6 +99,7 @@ namespace WindowsFormsApplication3
         private void BUTbet_Click(object sender, EventArgs e)
         {
             bet = (int)NUDbet.Value;
+            Console.WriteLine();
             screen = 2;
             state();
         }

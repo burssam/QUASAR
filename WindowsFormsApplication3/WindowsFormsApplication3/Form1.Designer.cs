@@ -48,6 +48,7 @@ namespace WindowsFormsApplication3
             // LBLinst
             // 
             this.LBLinst.AutoSize = true;
+            this.LBLinst.BackColor = System.Drawing.Color.Lime;
             this.LBLinst.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBLinst.Location = new System.Drawing.Point(35, 116);
             this.LBLinst.Name = "LBLinst";
@@ -58,59 +59,65 @@ namespace WindowsFormsApplication3
             // LBLtitle
             // 
             this.LBLtitle.AutoSize = true;
-            this.LBLtitle.Font = new System.Drawing.Font("Harlow Solid Italic", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBLtitle.BackColor = System.Drawing.Color.Lime;
+            this.LBLtitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBLtitle.ForeColor = System.Drawing.Color.Blue;
-            this.LBLtitle.Location = new System.Drawing.Point(191, 9);
+            this.LBLtitle.Location = new System.Drawing.Point(228, 9);
             this.LBLtitle.Name = "LBLtitle";
-            this.LBLtitle.Size = new System.Drawing.Size(278, 61);
+            this.LBLtitle.Size = new System.Drawing.Size(227, 55);
             this.LBLtitle.TabIndex = 1;
             this.LBLtitle.Text = "QUASAR";
             // 
             // BUTstart
             // 
+            this.BUTstart.BackColor = System.Drawing.Color.Lime;
             this.BUTstart.Location = new System.Drawing.Point(238, 335);
             this.BUTstart.Name = "BUTstart";
             this.BUTstart.Size = new System.Drawing.Size(231, 62);
             this.BUTstart.TabIndex = 2;
             this.BUTstart.Text = "Begin!";
-            this.BUTstart.UseVisualStyleBackColor = true;
+            this.BUTstart.UseVisualStyleBackColor = false;
             this.BUTstart.Click += new System.EventHandler(this.BUTstart_Click);
             // 
             // BUTbet
             // 
+            this.BUTbet.BackColor = System.Drawing.Color.Lime;
             this.BUTbet.Location = new System.Drawing.Point(283, 264);
             this.BUTbet.Name = "BUTbet";
             this.BUTbet.Size = new System.Drawing.Size(140, 23);
             this.BUTbet.TabIndex = 3;
             this.BUTbet.Text = "Place your bet!";
-            this.BUTbet.UseVisualStyleBackColor = true;
+            this.BUTbet.UseVisualStyleBackColor = false;
             // 
             // BUTstay
             // 
+            this.BUTstay.BackColor = System.Drawing.Color.Lime;
             this.BUTstay.Location = new System.Drawing.Point(294, 90);
             this.BUTstay.Name = "BUTstay";
             this.BUTstay.Size = new System.Drawing.Size(75, 23);
             this.BUTstay.TabIndex = 4;
             this.BUTstay.Text = "Stop Rolling";
-            this.BUTstay.UseVisualStyleBackColor = true;
+            this.BUTstay.UseVisualStyleBackColor = false;
             // 
             // BUT47
             // 
+            this.BUT47.BackColor = System.Drawing.Color.Lime;
             this.BUT47.Location = new System.Drawing.Point(546, 47);
             this.BUT47.Name = "BUT47";
             this.BUT47.Size = new System.Drawing.Size(75, 23);
             this.BUT47.TabIndex = 5;
             this.BUT47.Text = "Roll 4 - 7";
-            this.BUT47.UseVisualStyleBackColor = true;
+            this.BUT47.UseVisualStyleBackColor = false;
             // 
             // BUT18
             // 
+            this.BUT18.BackColor = System.Drawing.Color.Lime;
             this.BUT18.Location = new System.Drawing.Point(59, 47);
             this.BUT18.Name = "BUT18";
             this.BUT18.Size = new System.Drawing.Size(75, 23);
             this.BUT18.TabIndex = 6;
             this.BUT18.Text = "Roll 1 - 8";
-            this.BUT18.UseVisualStyleBackColor = true;
+            this.BUT18.UseVisualStyleBackColor = false;
             // 
             // NUDbet
             // 
@@ -159,6 +166,8 @@ namespace WindowsFormsApplication3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(701, 409);
             this.Controls.Add(this.TB47);
             this.Controls.Add(this.TB18);
@@ -182,7 +191,7 @@ namespace WindowsFormsApplication3
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         #endregion
