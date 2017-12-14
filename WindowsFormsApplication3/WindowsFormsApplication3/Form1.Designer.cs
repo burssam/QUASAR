@@ -88,6 +88,7 @@ namespace WindowsFormsApplication3
             this.BUTbet.TabIndex = 3;
             this.BUTbet.Text = "Place your bet!";
             this.BUTbet.UseVisualStyleBackColor = false;
+            this.BUTbet.Click += new System.EventHandler(this.BUTbet_Click_1);
             // 
             // BUTstay
             // 
