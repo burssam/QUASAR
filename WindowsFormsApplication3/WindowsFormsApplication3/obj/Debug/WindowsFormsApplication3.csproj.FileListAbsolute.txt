@@ -26,3 +26,13 @@ C:\Users\1BURSEYSAM\Source\Repos\QUASAR\WindowsFormsApplication3\WindowsFormsApp
 C:\Users\1BURSEYSAM\Source\Repos\QUASAR\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\WindowsFormsApplication3.Form1.resources
 C:\Users\1BURSEYSAM\Source\Repos\QUASAR\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\WindowsFormsApplication3.Properties.Resources.resources
 C:\Users\1BURSEYSAM\Source\Repos\QUASAR\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\WindowsFormsApplication3.csproj.GenerateResource.Cache
+C:\Users\Sam\source\repos\QUASAR2\WindowsFormsApplication3\WindowsFormsApplication3\bin\Debug\WindowsFormsApplication3.exe.config
+C:\Users\Sam\source\repos\QUASAR2\WindowsFormsApplication3\WindowsFormsApplication3\bin\Debug\WindowsFormsApplication3.exe
+C:\Users\Sam\source\repos\QUASAR2\WindowsFormsApplication3\WindowsFormsApplication3\bin\Debug\WindowsFormsApplication3.pdb
+C:\Users\Sam\source\repos\QUASAR2\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\WindowsFormsApplication3.csprojResolveAssemblyReference.cache
+C:\Users\Sam\source\repos\QUASAR2\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\WindowsFormsApplication3.Form1.resources
+C:\Users\Sam\source\repos\QUASAR2\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\WindowsFormsApplication3.Properties.Resources.resources
+C:\Users\Sam\source\repos\QUASAR2\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\WindowsFormsApplication3.csproj.GenerateResource.Cache
+C:\Users\Sam\source\repos\QUASAR2\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\WindowsFormsApplication3.csproj.CoreCompileInputs.cache
+C:\Users\Sam\source\repos\QUASAR2\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\WindowsFormsApplication3.exe
+C:\Users\Sam\source\repos\QUASAR2\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\WindowsFormsApplication3.pdb

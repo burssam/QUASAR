@@ -49,6 +49,9 @@ namespace WindowsFormsApplication3
             this.BUTnumplay = new System.Windows.Forms.Button();
             this.LBLstupid = new System.Windows.Forms.Label();
             this.LBLplayer = new System.Windows.Forms.Label();
+            this.LBLsum = new System.Windows.Forms.Label();
+            this.LBLbet = new System.Windows.Forms.Label();
+            this.BUTnext = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.NUDbet)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,11 +70,11 @@ namespace WindowsFormsApplication3
             // 
             this.LBLtitle.AutoSize = true;
             this.LBLtitle.BackColor = System.Drawing.Color.Lime;
-            this.LBLtitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBLtitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBLtitle.ForeColor = System.Drawing.Color.Blue;
-            this.LBLtitle.Location = new System.Drawing.Point(228, 9);
+            this.LBLtitle.Location = new System.Drawing.Point(12, 9);
             this.LBLtitle.Name = "LBLtitle";
-            this.LBLtitle.Size = new System.Drawing.Size(227, 55);
+            this.LBLtitle.Size = new System.Drawing.Size(89, 24);
             this.LBLtitle.TabIndex = 1;
             this.LBLtitle.Text = "QUASAR";
             // 
@@ -117,6 +120,7 @@ namespace WindowsFormsApplication3
             this.BUT47.TabIndex = 5;
             this.BUT47.Text = "Roll 4 - 7";
             this.BUT47.UseVisualStyleBackColor = false;
+            this.BUT47.Click += new System.EventHandler(this.BUT47_Click_1);
             // 
             // BUT18
             // 
@@ -158,7 +162,7 @@ namespace WindowsFormsApplication3
             // 
             // TBsum
             // 
-            this.TBsum.Location = new System.Drawing.Point(283, 171);
+            this.TBsum.Location = new System.Drawing.Point(283, 210);
             this.TBsum.Name = "TBsum";
             this.TBsum.Size = new System.Drawing.Size(100, 20);
             this.TBsum.TabIndex = 8;
@@ -246,6 +250,34 @@ namespace WindowsFormsApplication3
             this.LBLplayer.TabIndex = 17;
             this.LBLplayer.Text = "YOURNAMEHERE";
             // 
+            // LBLsum
+            // 
+            this.LBLsum.AutoSize = true;
+            this.LBLsum.Location = new System.Drawing.Point(289, 194);
+            this.LBLsum.Name = "LBLsum";
+            this.LBLsum.Size = new System.Drawing.Size(90, 13);
+            this.LBLsum.TabIndex = 18;
+            this.LBLsum.Text = "Your Current Sum";
+            // 
+            // LBLbet
+            // 
+            this.LBLbet.AutoSize = true;
+            this.LBLbet.Location = new System.Drawing.Point(314, 154);
+            this.LBLbet.Name = "LBLbet";
+            this.LBLbet.Size = new System.Drawing.Size(35, 13);
+            this.LBLbet.TabIndex = 19;
+            this.LBLbet.Text = "label1";
+            // 
+            // BUTnext
+            // 
+            this.BUTnext.Location = new System.Drawing.Point(295, 293);
+            this.BUTnext.Name = "BUTnext";
+            this.BUTnext.Size = new System.Drawing.Size(99, 23);
+            this.BUTnext.TabIndex = 20;
+            this.BUTnext.Text = "Begin Next Turn";
+            this.BUTnext.UseVisualStyleBackColor = true;
+            this.BUTnext.Click += new System.EventHandler(this.BUTnext_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -253,6 +285,9 @@ namespace WindowsFormsApplication3
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(701, 409);
+            this.Controls.Add(this.BUTnext);
+            this.Controls.Add(this.LBLbet);
+            this.Controls.Add(this.LBLsum);
             this.Controls.Add(this.LBLplayer);
             this.Controls.Add(this.LBLstupid);
             this.Controls.Add(this.BUTnumplay);
@@ -305,6 +340,9 @@ namespace WindowsFormsApplication3
         private System.Windows.Forms.Button BUTnumplay;
         private System.Windows.Forms.Label LBLstupid;
         private System.Windows.Forms.Label LBLplayer;
+        private System.Windows.Forms.Label LBLsum;
+        private System.Windows.Forms.Label LBLbet;
+        private System.Windows.Forms.Button BUTnext;
     }
 }
 

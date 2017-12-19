@@ -10,30 +10,21 @@ namespace WindowsFormsApplication3
     {
         public void betTurn(object [] player)
         {
+
             if (players.Count > 1)
             {
-                LBLplayer.Text = ("It's " + player[0] + "'s Turn");
+                LBLplayer.Text = ("It's " + player[0] + "'s Turn to Bet");
+                LBLplayer.Visible = true;
             }
-            if (clickBet == true)
-            {
-                for (int i = 0; i < players.Count; i++)
-                {
-                    playTurn(players[i]);
-                }
-            }
+            player[2] = NUDbet.Value;
         }
         public void playTurn(object [] player)
         {
             if (players.Count >1) {
-                LBLplayer.Text = ("It's " + player[0] + "'s Turn");
+                LBLplayer.Text = ("It's " + player[0] + "'s Turn Number"+ player[3]);
+                LBLbet.Text = "Your current bet is " + player[2];
             }
-            if (clickStay == true)
-            {
-                for (int i = 0; i < players.Count; i++)
-                {
-                    playTurn(players[i]);
-                }
-            }
+  
         }
     }
 }

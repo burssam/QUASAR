@@ -41,6 +41,10 @@ namespace WindowsFormsApplication3
             TB47.Text = roll.ToString();
             sum += roll;
             TBsum.Text = sum.ToString();
+            if (sum > 20)
+            {
+                LBLstupid.Text = "ahahahahahahahhahaha";
+            }
         }
 
         private void BUTbet_Click(object sender, EventArgs e)
@@ -60,9 +64,29 @@ namespace WindowsFormsApplication3
 
         private void BUTbet_Click_1(object sender, EventArgs e)
         {
-            bet = (int)NUDbet.Value;
-            screen = 2;
-            state();
+
+
+            
+            clickBet = true;
+            if (numPlayers > 1)
+            {
+                betTurn(players[bet]);
+                LBLtitle.Text += (players[bet][0] + "'sbet" + players[bet][2]);
+                bet++;
+            }
+            else
+            {
+                betTurn(players[0]);
+                bet=1;
+            }
+  
+            if (bet==numPlayers)
+            {
+                screen = 3;
+                state();
+            }
+            
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -92,6 +116,7 @@ namespace WindowsFormsApplication3
                 numPlayers = TBmulti.Lines.Length;
                 screen = 2;
                 state();
+
             }
             else
             {
@@ -106,11 +131,49 @@ namespace WindowsFormsApplication3
             TB18.Text = roll.ToString();
             sum += roll;
             TBsum.Text = sum.ToString();
+            if (sum >= 14)
+            {
+                BUTstay.Visible = true;
+            }
+            if (sum > 20)
+            {
+                LBLstupid.Text = "Oh no! You went past 20! You lost all your money!";
+                LBLstupid.Visible = true;
+                BUTnext.Visible = true;
+            }
         }
 
         private void BUTstay_Click(object sender, EventArgs e)
         {
-            clickStay = true;
+            if (sum == 15)
+            {
+                updatePlayer(players[bet], 1, 100);
+            }
+        }
+
+        private void BUT47_Click_1(object sender, EventArgs e)
+        {
+            int roll = die47();
+            TB47.Text = roll.ToString();
+            sum += roll;
+            TBsum.Text = sum.ToString();
+            if (sum >= 15)
+            {
+                BUTstay.Visible = true;
+            }
+           if (sum > 20)
+            {
+                LBLstupid.Text = "Oh no! You went past 20! You lost all your money!";
+                
+                LBLstupid.Visible = true;
+                BUTnext.Visible = true;
+            }
+        }
+
+        private void BUTnext_Click(object sender, EventArgs e)
+        {
+            //players[bet][3]--;
+
         }
     }
 }
