@@ -52,6 +52,7 @@ namespace WindowsFormsApplication3
             this.LBLsum = new System.Windows.Forms.Label();
             this.LBLbet = new System.Windows.Forms.Label();
             this.BUTnext = new System.Windows.Forms.Button();
+            this.LBLgains = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.NUDbet)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,7 +104,7 @@ namespace WindowsFormsApplication3
             // BUTstay
             // 
             this.BUTstay.BackColor = System.Drawing.Color.Lime;
-            this.BUTstay.Location = new System.Drawing.Point(294, 90);
+            this.BUTstay.Location = new System.Drawing.Point(295, 141);
             this.BUTstay.Name = "BUTstay";
             this.BUTstay.Size = new System.Drawing.Size(75, 23);
             this.BUTstay.TabIndex = 4;
@@ -235,7 +236,7 @@ namespace WindowsFormsApplication3
             // 
             this.LBLstupid.AutoSize = true;
             this.LBLstupid.BackColor = System.Drawing.Color.Lime;
-            this.LBLstupid.Location = new System.Drawing.Point(213, 269);
+            this.LBLstupid.Location = new System.Drawing.Point(209, 264);
             this.LBLstupid.Name = "LBLstupid";
             this.LBLstupid.Size = new System.Drawing.Size(276, 13);
             this.LBLstupid.TabIndex = 16;
@@ -244,15 +245,18 @@ namespace WindowsFormsApplication3
             // LBLplayer
             // 
             this.LBLplayer.AutoSize = true;
-            this.LBLplayer.Location = new System.Drawing.Point(280, 74);
+            this.LBLplayer.BackColor = System.Drawing.Color.Lime;
+            this.LBLplayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBLplayer.Location = new System.Drawing.Point(259, 74);
             this.LBLplayer.Name = "LBLplayer";
-            this.LBLplayer.Size = new System.Drawing.Size(99, 13);
+            this.LBLplayer.Size = new System.Drawing.Size(148, 20);
             this.LBLplayer.TabIndex = 17;
             this.LBLplayer.Text = "YOURNAMEHERE";
             // 
             // LBLsum
             // 
             this.LBLsum.AutoSize = true;
+            this.LBLsum.BackColor = System.Drawing.Color.Lime;
             this.LBLsum.Location = new System.Drawing.Point(289, 194);
             this.LBLsum.Name = "LBLsum";
             this.LBLsum.Size = new System.Drawing.Size(90, 13);
@@ -262,7 +266,8 @@ namespace WindowsFormsApplication3
             // LBLbet
             // 
             this.LBLbet.AutoSize = true;
-            this.LBLbet.Location = new System.Drawing.Point(314, 154);
+            this.LBLbet.BackColor = System.Drawing.Color.Lime;
+            this.LBLbet.Location = new System.Drawing.Point(312, 103);
             this.LBLbet.Name = "LBLbet";
             this.LBLbet.Size = new System.Drawing.Size(35, 13);
             this.LBLbet.TabIndex = 19;
@@ -270,13 +275,24 @@ namespace WindowsFormsApplication3
             // 
             // BUTnext
             // 
+            this.BUTnext.BackColor = System.Drawing.Color.Lime;
             this.BUTnext.Location = new System.Drawing.Point(295, 293);
             this.BUTnext.Name = "BUTnext";
             this.BUTnext.Size = new System.Drawing.Size(99, 23);
             this.BUTnext.TabIndex = 20;
             this.BUTnext.Text = "Begin Next Turn";
-            this.BUTnext.UseVisualStyleBackColor = true;
+            this.BUTnext.UseVisualStyleBackColor = false;
             this.BUTnext.Click += new System.EventHandler(this.BUTnext_Click);
+            // 
+            // LBLgains
+            // 
+            this.LBLgains.AutoSize = true;
+            this.LBLgains.BackColor = System.Drawing.Color.Lime;
+            this.LBLgains.Location = new System.Drawing.Point(209, 240);
+            this.LBLgains.Name = "LBLgains";
+            this.LBLgains.Size = new System.Drawing.Size(276, 13);
+            this.LBLgains.TabIndex = 21;
+            this.LBLgains.Text = "You MUST enter a name or names into one of the boxes!";
             // 
             // Form1
             // 
@@ -285,6 +301,7 @@ namespace WindowsFormsApplication3
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(701, 409);
+            this.Controls.Add(this.LBLgains);
             this.Controls.Add(this.BUTnext);
             this.Controls.Add(this.LBLbet);
             this.Controls.Add(this.LBLsum);
@@ -343,6 +360,7 @@ namespace WindowsFormsApplication3
         private System.Windows.Forms.Label LBLsum;
         private System.Windows.Forms.Label LBLbet;
         private System.Windows.Forms.Button BUTnext;
+        private System.Windows.Forms.Label LBLgains;
     }
 }
 

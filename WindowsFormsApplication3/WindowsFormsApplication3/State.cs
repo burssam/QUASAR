@@ -32,6 +32,8 @@ namespace WindowsFormsApplication3
                 TB18.Visible = false;
                 TB47.Visible = false;
                 LBLbet.Visible = false;
+                BUTnext.Visible = false;
+                LBLsum.Visible = false;
 
             }
             else if (screen == 1)
@@ -55,6 +57,8 @@ namespace WindowsFormsApplication3
                 TB18.Visible = false;
                 TB47.Visible = false;
                 LBLbet.Visible = false;
+                BUTnext.Visible = false;
+                LBLsum.Visible = false;
 
             }
             else if (screen == 2)
@@ -79,6 +83,8 @@ namespace WindowsFormsApplication3
                 TB18.Visible = false;
                 TB47.Visible = false;
                 LBLbet.Visible = false;
+                BUTnext.Visible = false;
+                LBLsum.Visible = false;
 
             }
             else if (screen == 3)
@@ -97,6 +103,8 @@ namespace WindowsFormsApplication3
                 TB18.Visible = true;
                 TB47.Visible = true;
                 LBLbet.Visible = true;
+                BUTnext.Visible = true;
+                LBLsum.Visible = true;
                 //screen3
 
             }

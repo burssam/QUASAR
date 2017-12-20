@@ -14,7 +14,7 @@ namespace WindowsFormsApplication3
             object[] playerInfo = new object[4];
             playerInfo[0] = name;
             playerInfo[1] = (int)500;
-            playerInfo[2] = bet;
+            playerInfo[2] = (int)0;
             playerInfo[3] = (int)1 ;
             return playerInfo;
         }

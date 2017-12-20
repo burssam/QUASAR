@@ -13,7 +13,8 @@ namespace WindowsFormsApplication3
     public partial class Form1 : Form
     {
         public int sum = 0;
-        int bet = 0;
+        int turn = 0;
+        int turn5 = 0;
         int screen = 0;
         int numPlayers = 1;
         Boolean clickStay = false;
@@ -65,25 +66,29 @@ namespace WindowsFormsApplication3
         private void BUTbet_Click_1(object sender, EventArgs e)
         {
 
-
-            
             clickBet = true;
             if (numPlayers > 1)
             {
-                betTurn(players[bet]);
-                LBLtitle.Text += (players[bet][0] + "'sbet" + players[bet][2]);
-                bet++;
+                betTurn(players[turn]);
+                turn++;
+                if (turn<players.Count) {
+                    LBLplayer.Text = ("It's " + players[turn][0] + "'s Turn to Bet");
+                }
             }
             else
             {
                 betTurn(players[0]);
-                bet=1;
+                turn=1;
             }
   
-            if (bet==numPlayers)
+            if (turn==numPlayers)
             {
+                LBLplayer.Text = ("It's " + players[0][0] + "'s Turn Number " + players[0][3]);
+                LBLbet.Text = ("Your current bet is "+ players[0][2]);
+                turn = 0;
                 screen = 3;
                 state();
+               
             }
             
 
@@ -114,8 +119,10 @@ namespace WindowsFormsApplication3
                    players.Add(newPlayer(TBmulti.Lines[i]));
                 }
                 numPlayers = TBmulti.Lines.Length;
+                LBLplayer.Text = ("It's " + players[0][0] + "'s Turn to Bet");
                 screen = 2;
                 state();
+                LBLplayer.Visible = true;
 
             }
             else
@@ -131,24 +138,23 @@ namespace WindowsFormsApplication3
             TB18.Text = roll.ToString();
             sum += roll;
             TBsum.Text = sum.ToString();
-            if (sum >= 14)
+            if (sum >= 15)
             {
                 BUTstay.Visible = true;
             }
             if (sum > 20)
             {
-                LBLstupid.Text = "Oh no! You went past 20! You lost all your money!";
+                playTurn(players[turn]);
                 LBLstupid.Visible = true;
+                LBLgains.Visible = true;
                 BUTnext.Visible = true;
+
             }
         }
 
         private void BUTstay_Click(object sender, EventArgs e)
         {
-            if (sum == 15)
-            {
-                updatePlayer(players[bet], 1, 100);
-            }
+            playTurn(players[turn]);
         }
 
         private void BUT47_Click_1(object sender, EventArgs e)
@@ -163,9 +169,9 @@ namespace WindowsFormsApplication3
             }
            if (sum > 20)
             {
-                LBLstupid.Text = "Oh no! You went past 20! You lost all your money!";
-                
+                playTurn(players[turn]);
                 LBLstupid.Visible = true;
+                LBLgains.Visible = true;
                 BUTnext.Visible = true;
             }
         }
@@ -173,6 +179,32 @@ namespace WindowsFormsApplication3
         private void BUTnext_Click(object sender, EventArgs e)
         {
             //players[bet][3]--;
+            while (turn5 < 6) {
+                if (numPlayers > 1)
+                {
+                    LBLtitle.Text += (players[turn][0] + "'sbmonsy" + players[turn][1]);
+                    turn++;
+                    if (turn < players.Count)
+                    {
+                        LBLplayer.Text = ("It's " + players[turn][0] + "'s Turn Number" + players[turn][3]);
+                        LBLbet.Text = "Your current bet is " + players[turn][2];
+                    }
+                }
+                else
+                {
+                    playTurn(players[0]);
+                    turn = 1;
+                }
+                turn5++;
+            }
+            if (turn == numPlayers && turn5 == 5)
+            {
+                LBLplayer.Text = ("It's " + players[0][0] + "'s Turn Number " + players[0][3]);
+                LBLbet.Text = ("Your current bet is " + players[0][2]);
+                screen = 3;
+                state();
+
+            }
 
         }
     }
