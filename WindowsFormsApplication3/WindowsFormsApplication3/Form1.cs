@@ -24,6 +24,7 @@ namespace WindowsFormsApplication3
         {
            InitializeComponent();
             state();
+            //LBLinst.Text = "Leaderboard:" + " \n\n" + screen;
             LBLtitle.Visible = true;
             BUTstay.Visible = false;
             LBLstupid.Visible = false;
@@ -80,7 +81,7 @@ namespace WindowsFormsApplication3
                 betTurn(players[0]);
                 turn=1;
             }
-  
+            NUDbet.Value = 50;
             if (turn==numPlayers)
             {
                 LBLplayer.Text = ("It's " + players[0][0] + "'s Turn Number " + players[0][3]);
@@ -88,7 +89,17 @@ namespace WindowsFormsApplication3
                 turn = 0;
                 screen = 3;
                 state();
-               
+
+                //
+                List<object[]> playersSort = players.OrderByDescending(o => o[1]).ToList();
+                LBLinst.Text = "Leaderboard:";
+                for (int i = 0; i < players.Count; i++)
+                {
+                    LBLinst.Text += " \n\n" + playersSort[i][0] + ": " + playersSort[i][1] + " points";
+                }
+                //
+                LBLinst.Visible = true;
+
             }
             
 
@@ -179,10 +190,11 @@ namespace WindowsFormsApplication3
         private void BUTnext_Click(object sender, EventArgs e)
         {
             //players[bet][3]--;
+            turn++;
             while (turn5 < 6) {
                 if (numPlayers > 1)
                 {
-                    LBLtitle.Text += (players[turn][0] + "'sbmonsy" + players[turn][1]);
+                   
                     turn++;
                     if (turn < players.Count)
                     {
@@ -199,9 +211,24 @@ namespace WindowsFormsApplication3
             }
             if (turn == numPlayers && turn5 == 5)
             {
-                LBLplayer.Text = ("It's " + players[0][0] + "'s Turn Number " + players[0][3]);
-                LBLbet.Text = ("Your current bet is " + players[0][2]);
-                screen = 3;
+                if (players.Count == 1)
+                {
+                    //
+                    List<object[]> playersSort = players.OrderByDescending(o => o[1]).ToList();
+                    LBLinst.Text = "Leaderboard:";
+                    for (int i = 0; i < players.Count; i++)
+                    {
+                        LBLinst.Text += " \n\n" + playersSort[i][0] + ": " + playersSort[i][1] + " points";
+                    }
+                    //
+                    LBLinst.Visible = true;
+                }
+                
+                else
+                {
+
+                }
+                screen = 4;
                 state();
 
             }

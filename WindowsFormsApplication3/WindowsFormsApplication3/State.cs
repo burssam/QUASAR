@@ -11,6 +11,7 @@ namespace WindowsFormsApplication3
         public void state()
         {
             LBLstupid.Visible = false;
+            LBLgains.Visible = false;
             if (screen == 0)
             {//inst
                 //screen0
@@ -34,6 +35,7 @@ namespace WindowsFormsApplication3
                 LBLbet.Visible = false;
                 BUTnext.Visible = false;
                 LBLsum.Visible = false;
+
 
             }
             else if (screen == 1)
@@ -107,6 +109,30 @@ namespace WindowsFormsApplication3
                 LBLsum.Visible = true;
                 //screen3
 
+            }
+            else if(screen == 4)
+            {
+                //screen0
+                LBLinst.Visible = true;
+                BUTstart.Visible = true;
+                //screen1
+                LBLmulti.Visible = false;
+                LBLsingle.Visible = false;
+                TBsingle.Visible = false;
+                TBmulti.Visible = false;
+                BUTnumplay.Visible = false;
+                //screen2
+                NUDbet.Visible = false;
+                BUTbet.Visible = false;
+                //screen3
+                BUT18.Visible = false;
+                BUT47.Visible = false;
+                TBsum.Visible = false;
+                TB18.Visible = false;
+                TB47.Visible = false;
+                LBLbet.Visible = false;
+                BUTnext.Visible = false;
+                LBLsum.Visible = false;
             }
 
         }
