@@ -19,15 +19,15 @@ namespace WindowsFormsApplication3
         {
             int t = (int)player[3];
             t++;
-    
+            LBLbugsp.Text += "\n\n" + player[1] +"start";
             player[3]= t;
-            int money =(int)player[1] ;
             int bet =(int)player[2];
+            int money = ((int)player[1] - bet) ;
             if (sum == 15)
             {
                 player[1] = (int)((money)+(bet * 0.25));
                 LBLstupid.Text = "It's better than losing it all?";
-                LBLgains.Text = "You lost " + bet* .75 + " points";
+                LBLgains.Text = "You lost " + (int)bet* .75 + " points";
             }
             else if (sum == 16)
             {
@@ -70,9 +70,11 @@ namespace WindowsFormsApplication3
             }
             else
             {
-                LBLplayer.Text = ("It's turn number " + players[0][3] + " for " + players[0][0]);
+                //LBLplayer.Text = ("It's turn number " + players[0][3] + " for " + players[0][0]);
                 LBLplayer.Visible = true;
             }
+            LBLbugsp.Text += "\n\n" + player[1] + "end";
+            turn++;
   
         }
     }

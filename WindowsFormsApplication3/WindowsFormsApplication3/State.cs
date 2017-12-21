@@ -12,6 +12,12 @@ namespace WindowsFormsApplication3
         {
             LBLstupid.Visible = false;
             LBLgains.Visible = false;
+            if (players.Count>=1 )
+            {
+                LBLbuggy.Text += (players[0][3] + " monies" + players[0][1]);
+
+
+            }
             if (screen == 0)
             {//inst
                 //screen0
@@ -105,8 +111,9 @@ namespace WindowsFormsApplication3
                 TB18.Visible = true;
                 TB47.Visible = true;
                 LBLbet.Visible = true;
-                BUTnext.Visible = true;
+                BUTnext.Visible = false;
                 LBLsum.Visible = true;
+                LBLplayer.Visible = true;
                 //screen3
 
             }
@@ -114,7 +121,6 @@ namespace WindowsFormsApplication3
             {
                 //screen0
                 LBLinst.Visible = true;
-                BUTstart.Visible = true;
                 //screen1
                 LBLmulti.Visible = false;
                 LBLsingle.Visible = false;
@@ -133,8 +139,10 @@ namespace WindowsFormsApplication3
                 LBLbet.Visible = false;
                 BUTnext.Visible = false;
                 LBLsum.Visible = false;
+                LBLplayer.Visible = false;
             }
 
         }
+
     }
 }

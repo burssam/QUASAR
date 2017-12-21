@@ -15,7 +15,7 @@ namespace WindowsFormsApplication3
             playerInfo[0] = name;
             playerInfo[1] = (int)500;
             playerInfo[2] = (int)0;
-            playerInfo[3] = (int)1 ;
+            playerInfo[3] = (int)0;
             return playerInfo;
         }
     
