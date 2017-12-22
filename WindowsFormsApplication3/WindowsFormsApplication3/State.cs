@@ -12,10 +12,14 @@ namespace WindowsFormsApplication3
         {
             LBLstupid.Visible = false;
             LBLgains.Visible = false;
+
             if (players.Count>=1 )
             {
-                LBLbuggy.Text += (players[0][3] + " monies" + players[0][1]);
+                for (int i = 0; i<players.Count; i++) {
+                    LBLbuggy.Text += (players[i][0] + " turn" + players[i][3] + " $$" + players[i][1]);
 
+                }
+                LBLbuggy.Text += ("\n");
 
             }
             if (screen == 0)

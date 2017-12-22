@@ -14,13 +14,13 @@ namespace WindowsFormsApplication3
     {
         public int sum = 0;
         int turn = 0;
-        Boolean turn5 = false;
+        int turnMulti=0;
+        Boolean lastPlay;
         int screen = 0;
         int numPlayers = 1;
-        int finiTurn = 0;
+        int turnz = 0;
         int holdThis = 1;
-        Boolean clickStay = false;
-        Boolean clickBet = false;
+        int middlePos = 350;
         List<object[]> players = new List<object[]>();
         public Form1()
         {
@@ -57,13 +57,12 @@ namespace WindowsFormsApplication3
         private void BUTbet_Click_1(object sender, EventArgs e)
         {
 
-            clickBet = true;
             if (numPlayers > 1)
             {
                 betTurn(players[turn]);
                 turn++;
                 if (turn<players.Count) {
-                    LBLplayer.Text = ("It's " + players[turn][0] + "'s Turn to Bet");
+                    LBLplayer.Text = ("It's " + players[turn][0] + "'s turn to bet");
                 }
             }
             else
@@ -76,7 +75,7 @@ namespace WindowsFormsApplication3
             {
                 if (players.Count > 1)
                 {
-                    LBLplayer.Text = ("It's " + players[0][0] + "'s Turn Number " + players[0][3]);
+                    LBLplayer.Text = ("It's " + players[0][0] + "'s Turn Number " + holdThis);
                 }
                 else
                 {
@@ -109,6 +108,7 @@ namespace WindowsFormsApplication3
             if (TBsingle.Text!="")
             {
                 players.Add(newPlayer(TBsingle.Text));
+                lastPlay = true;
                 screen = 2;
                 state();
             } 
@@ -119,7 +119,8 @@ namespace WindowsFormsApplication3
                    players.Add(newPlayer(TBmulti.Lines[i]));
                 }
                 numPlayers = TBmulti.Lines.Length;
-                LBLplayer.Text = ("It's " + players[0][0] + "'s Turn to Bet");
+                LBLplayer.Text = ("It's " + players[0][0] + "'s turn to bet");
+                lastPlay = false;
                 screen = 2;
                 state();
                 LBLplayer.Visible = true;
@@ -154,7 +155,11 @@ namespace WindowsFormsApplication3
                 }
                 LBLstupid.Visible = true;
                 LBLgains.Visible = true;
-                BUTnext.Visible = true;
+                if ( lastPlay == true) {
+                    BUTnext.Text = "See Results!";
+                }
+            BUTnext.Visible = true;
+                
             }
         }
 
@@ -171,6 +176,10 @@ namespace WindowsFormsApplication3
 
             LBLstupid.Visible = true;
             LBLgains.Visible = true;
+            if (lastPlay == true)
+            {
+                BUTnext.Text = "See Results!";
+            }
             BUTnext.Visible = true;
         }
 
@@ -196,32 +205,48 @@ namespace WindowsFormsApplication3
                 }
                 LBLstupid.Visible = true;
                 LBLgains.Visible = true;
+                if (lastPlay == true)
+                {
+                    BUTnext.Text = "See Results!";
+                }
                 BUTnext.Visible = true;
             }
         }
 
         private void BUTnext_Click(object sender, EventArgs e)
         {
-            holdThis = (int)players[0][3] + 1;
+
+            if (turnz == ((players.Count) * 5)-1)
+            {
+                lastPlay = true;
+            }
             if (players.Count >= 1)
             {
-                LBLbuggy.Text += ( players[0][3]+ " monies" + players[0][1]);
+                for (int i = 0; i < players.Count; i++)
+                {
+                    LBLbuggy.Text += (players[i][0] + "  turn" + players[i][3]+ " $$" + players[i][1]);
+                }
+                LBLbuggy.Text += ("\n"); 
 
             }
-            //turn++;
-            finiTurn = (int)players[players.Count - 1][3];
-            if (finiTurn == 5)
-            {
-                turn5 = true;
-            }
+     
             if (numPlayers > 1)
                 {
-                    turn++;
+                   // turn++;
                     if (turn < players.Count)
                     {
-                        LBLplayer.Text = ("It's turn number " + players[turn][3] + " for " + players[turn][0]);
+                        LBLplayer.Text = ("It's turn number " + holdThis + " for " + players[turn][0]);
                         LBLbet.Text = "Your current bet is " + players[turn][2];
-                    }
+                    sum = 0;
+                    LBLstupid.Visible = false;
+                    LBLgains.Visible = false;
+                    BUTstay.Visible = false;
+                    BUTnext.Visible = false;
+                    BUT47.Visible = true;
+                    BUT18.Visible = true;
+                    updatePlayer(players[turn], 3, turnMulti);
+                    LBLplayer.Visible = true;
+                }
               }
                else
                 {
@@ -230,39 +255,79 @@ namespace WindowsFormsApplication3
                 LBLgains.Visible = false;
                 BUTstay.Visible = false;
                 BUTnext.Visible = false;
+                BUT47.Visible = true;
+                BUT18.Visible = true;
                 updatePlayer(players[0], 3, turn);
-                LBLplayer.Text = ("It's turn number " + holdThis);
+                LBLplayer.Text = ("It's turn number " + (holdThis));
                 LBLplayer.Visible = true;
                 //turn = 1;
                 }
-            if (turn == numPlayers && turn5 == true)
-            {
-                if (players.Count > 1)
-                {
-                    //
-                    List<object[]> playersSort = players.OrderByDescending(o => o[1]).ToList();
-                    LBLinst.Text = "Leaderboard:";
-                    for (int i = 0; i < players.Count; i++)
-                    {
-                        LBLinst.Text += " \n\n" + playersSort[i][0] + ": " + playersSort[i][1] + " points";
-                    }
-                    //
-                    LBLinst.Visible = true;
-                }
-                
 
-            }
-            else if (holdThis == 6)
+            if (holdThis == 6 && players.Count == 1)
             {
-                LBLinst.Text = "Good Job, "+ players[0][0] +"\n Your end total was \n" + players[0][1];
+
+                LBLinst.Text = "Good job, " + players[0][0] + "\n Your end total was " + players[0][1] + " points";
+
+                LBLinst.SetBounds(middlePos - 100, 200, 200, 100);
                 screen = 4;
+                state();
+            }
+            else if (players.Count > 1 && turnz==(players.Count)*5)
+            {
+
+                //
+                List<object[]> playersSort = players.OrderByDescending(o => o[1]).ToList();
+                LBLinst.Text = "Leaderboard:";
+                for (int i = 0; i < players.Count; i++)
+                {
+                    LBLinst.Text += " \n\n" + playersSort[i][0] + ": " + playersSort[i][1] + " points";
+                }
+                //
+                screen=4;
                 state();
 
             }
 
+            
+
         }
 
         private void LBLtitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LBLplayer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LBLbet_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LBLgains_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LBLmulti_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LBLsingle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LBLinst_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LBLstupid_Click(object sender, EventArgs e)
         {
 
         }
