@@ -16,10 +16,10 @@ namespace WindowsFormsApplication3
             if (players.Count>=1 )
             {
                 for (int i = 0; i<players.Count; i++) {
-                    LBLbuggy.Text += (players[i][0] + " turn" + players[i][3] + " $$" + players[i][1]);
+                   // LBLbuggy.Text += (players[i][0] + " turn" + players[i][3] + " $$" + players[i][1]);
 
                 }
-                LBLbuggy.Text += ("\n");
+                //LBLbuggy.Text += ("\n");
 
             }
             if (screen == 0)

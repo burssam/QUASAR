@@ -19,46 +19,54 @@ namespace WindowsFormsApplication3
         {
             int t = (int)player[3];
             t++;
-           // LBLbugsp.Text += "\n\n" + player[1] +"start";
+            // LBLbugsp.Text += "\n\n" + player[1] +"start";
+            //LBLbuggy.Text += player[0];
             player[3]= t;
             int bet =(int)player[2];
-            int money = ((int)player[1] - bet) ;
+            int money = ((int)player[1] - bet); ;
+
+            if (t== 1 && players.Count>0)
+            {
+                money =  ((int)player[1]);
+
+            }
+         
             BUT47.Visible = false;
             BUT18.Visible = false;
             BUTstay.Visible = false;
             if (sum == 15)
             {
-                player[1] = (int)((money)+(bet * 0.25)) + bet ;
+                player[1] = (int)((money)+(bet * 0.25)) ;
                 LBLstupid.Text = "It's better than losing it all?";
                 LBLgains.Text = "You lost " + (int)(bet* .75) + " points";
             }
             else if (sum == 16)
             {
-                player[1] = (int)((money) + (bet * 0.5)) + bet;
+                player[1] = (int)((money) + (bet * 0.5)) ;
                 LBLstupid.Text = "I guess you're not a complete loser but that's still pretty bad.";
                 LBLgains.Text = "You lost " + (int)(bet * .5) + " points";
             }
             else if (sum == 17)
             {
-                player[1] = (int)((money) + (bet)) + bet;
+                player[1] = (int)((money) + (bet)) ;
                 LBLstupid.Text = "No prize money for you this time.";
                 LBLgains.Text = "You broke even.";
             }
             else if (sum == 18)
             {
-                player[1] = (int)((money) + (bet * 1.25)) + bet;
+                player[1] = (int)((money) + (bet * 1.25)) ;
                 LBLstupid.Text = "Pocket change, but it's better than nothing.";
                 LBLgains.Text = "You won " + (int)(bet * .25) + " points";
             }
             else if (sum == 19)
             {
-                player[1] = (int)((money) + (bet * 1.5)) + bet;
+                player[1] = (int)((money) + (bet * 1.5)) ;
                 LBLstupid.Text = "Think of all the things you can buy with these points!";
                 LBLgains.Text = "You won " + bet * .5 + " points";
             }
             else if (sum == 20)
             {
-                player[1] = (int)((money) + (bet * 2)) + bet;
+                player[1] = (int)((money) + (bet * 2)) ;
                 LBLstupid.Text = "A perfect score? Amazing.";
                 LBLgains.Text = "You won " + bet + " points";
             }
@@ -87,6 +95,7 @@ namespace WindowsFormsApplication3
                 LBLplayer.Visible = true;
                 turn++;
                 turnz++;
+                holdThis++;
             }
 
            

@@ -327,6 +327,7 @@ namespace WindowsFormsApplication3
             this.LBLbuggy.Size = new System.Drawing.Size(206, 316);
             this.LBLbuggy.TabIndex = 22;
             this.LBLbuggy.Text = " ";
+            this.LBLbuggy.Visible = false;
             // 
             // Form1
             // 
@@ -334,7 +335,7 @@ namespace WindowsFormsApplication3
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(869, 409);
+            this.ClientSize = new System.Drawing.Size(684, 409);
             this.Controls.Add(this.LBLbuggy);
             this.Controls.Add(this.LBLgains);
             this.Controls.Add(this.BUTnext);

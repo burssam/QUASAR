@@ -108,7 +108,7 @@ namespace WindowsFormsApplication3
             if (TBsingle.Text!="")
             {
                 players.Add(newPlayer(TBsingle.Text));
-                lastPlay = true;
+                lastPlay = false;
                 screen = 2;
                 state();
             } 
@@ -224,9 +224,9 @@ namespace WindowsFormsApplication3
             {
                 for (int i = 0; i < players.Count; i++)
                 {
-                    LBLbuggy.Text += (players[i][0] + "  turn" + players[i][3]+ " $$" + players[i][1]);
+                   // LBLbuggy.Text += (players[i][0] + "  turn" + players[i][3]+ " $$" + players[i][1]);
                 }
-                LBLbuggy.Text += ("\n"); 
+               // LBLbuggy.Text += ("\n"); 
 
             }
      
@@ -260,7 +260,7 @@ namespace WindowsFormsApplication3
                 updatePlayer(players[0], 3, turn);
                 LBLplayer.Text = ("It's turn number " + (holdThis));
                 LBLplayer.Visible = true;
-                //turn = 1;
+                turn = 1;
                 }
 
             if (holdThis == 6 && players.Count == 1)
